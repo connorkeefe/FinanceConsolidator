@@ -1,0 +1,62 @@
+base_path: '/Users/connorkeefe/Desktop/FinanceConsolidator/'
+cert_path: 'api_key/finance-tracker-418317-31c03379479b.json'
+accounts:
+  Credit Cards:
+    BMO CAD: 
+      name: "BMO Eclipse Credit"
+      type: "CAD"
+      context: "You are categorizing transactions from a credit card statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Food, Travel, Shopping, Bills, Tranfer, Other];\
+                anything containing PARK or a gas station should be included in Travel, anything containing NETFLIX, Prime Member should be Bills,\
+                METRO, LOBLAWS and Resturaunt names are Food, Anything not related to the purchase of goods (for example: services) \
+                should be Other, if you dont have over an 85 percent confidence on your pick it should be categorized as Other, return only the category value:"
+    BMO US:
+      name: "BMO Mastercard"
+      type: "USD"
+      context: "You are categorizing transactions from a credit card statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Food, Travel, Shopping, Bills, Tranfer, Other];\
+                anything containing PARK or a gas station should be included in Travel, anything containing NETFLIX, Prime Member should be Bills,\
+                METRO, LOBLAWS and Resturaunt names are Food, Anything not related to the purchase of goods (for example: services) \
+                should be Other, if you dont have over an 85 percent confidence on your pick it should be categorized as Other, return only the category value:"
+    RBC:
+      name: "RBC Avion"
+      type: "CAD"
+      context: "You are categorizing transactions from a credit card statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Food, Travel, Shopping, Bills, Tranfer, Other];\
+                anything containing PARK or a gas station should be included in Travel, anything containing NETFLIX, Prime Member should be Bills,\
+                METRO, LOBLAWS and BAKERSFIELD are Food, Anything not related to the purchase of goods (for example: services) \
+                should be Other this includes Health and Golf, anything containing PAYMENT - THANK YOU is Transfer, if you dont have over an 90 percent \
+                confidence on your pick it should be categorized as Other, return only the category value:"
+  Bank Account:
+    BMO Chq:
+      name: "BMO Chequing"
+      type: "CAD"
+      context: "You are categorizing transactions from a bank account statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Food, Travel, Shopping, Bills, Tranfer, Other];\
+                anything containing GOODLIFE, Bill Payment should be Bills, anything containing WS INVESTMENTS should be Transfer, \
+                anything containing INTERAC or Direct Deposit or Cheque Deposit is Other, if you dont have over an 85 percent confidence on your pick it \
+                should be categorized as Other, return only the category value:"
+    BMO Sav:
+      name: "BMO Saving"
+      type: "CAD"
+      context: "You are categorizing transactions from a bank account statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Tranfer, Other];\
+                anything containing Transfer or TF should be Transfer, \
+                anything containing INTERAC or Interest is Other, if you dont have over an 85 percent confidence on your pick it \
+                should be categorized as Other, return only the category value:"
+    BMO USD:
+      name: "BMO US Chequing"
+      type: "USD"
+      context: "You are categorizing transactions from a bank account statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Tranfer, Other];\
+                anything containing Transfer or TF should be Transfer, \
+                anything containing INTERAC or Interest is Other, if you dont have over an 85 percent confidence on your pick it \
+                should be categorized as Transfer, return only the category value:"
+    RBC Chq:
+      name: "RBC Chequing"
+      type: "CAD"
+      context: "You are categorizing transactions from a bank account statement, ignore integers and special characters in the description, \
+                they can be categorized into one of the following categories: [Tranfer, Other];\
+                anything containing Online Banking transfer or TF should be Transfer, \
+                anything containing e-Transfer, BR to BR or purchase is Other, if you dont have over an 85 percent confidence on your pick it \
+                should be categorized as Other, return only the category value:"
