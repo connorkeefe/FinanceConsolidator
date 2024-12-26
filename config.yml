@@ -1,4 +1,4 @@
-base_path: '/Users/connorkeefe/Desktop/FinanceConsolidator/'
+base_path: '/Users/connorkeefe/PycharmProjects/FinanceConsolidator/'
 cert_path: 'api_key/finance-tracker-418317-31c03379479b.json'
 accounts:
   Credit Cards:
