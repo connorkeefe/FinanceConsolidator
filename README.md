@@ -7,17 +7,12 @@ Navigate to the project folder:
 
 #### Get API key for OpenAI
 
-https://platform.openai.com/api-keys
-
-Login and create a new secret key
-
-Set it as an environment variable (MacOS):
-
+1. Go to openai developer page https://platform.openai.com/api-keys
+2. Login and create a new secret key
+3. Set it as an environment variable (MacOS):
 ```export OPENAI_API_KEY="your-api-key-here"```
 
 #### Get API key for Google Sheets
-
-First, you need to set up access to Google Sheets API:
 
 1. Go to the Google Developers Console. https://console.cloud.google.com/apis/dashboard
 2. Login and Create a new project.
