@@ -1,6 +1,3 @@
-import csv
-import sqlite3
-from sqlite3 import Error
 import glob
 import os
 import yaml
@@ -8,7 +5,7 @@ import json
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-
+from datetime import datetime
 
 with open('config.yml', 'r') as f:
     config = yaml.safe_load(f)
@@ -18,7 +15,6 @@ with open('tracker.json', 'r') as f:
 
 count = data['count']
 
-from datetime import datetime
 
 def convert_date_format(date_string):
 
@@ -47,9 +43,9 @@ def upload_sheet(df):
 
     # Find a workbook by name and open the first sheet
     # Make sure you use the exact name of the spreadsheet as you've named it
-    sheet = client.open("Finance-Tracker")
+    sheet = client.open(config['file_name'])
 
-    worksheet = sheet.worksheet("Transactions_List")
+    worksheet = sheet.worksheet(config['sheet_name'])
 
     dataframe = df
 

@@ -1,9 +1,8 @@
 import fitz  # PyMuPDF
 import pandas as pd
 import glob
-from io import StringIO
 import os
-import yaml
+import re
 
 def extract_text_from_pdf(pdf_path):
     doc = fitz.open(pdf_path)
@@ -11,8 +10,6 @@ def extract_text_from_pdf(pdf_path):
     for page in doc:
         text += page.get_text()
     return text
-
-import re
 
 def detect_date_format_credit(s):
     # Regex pattern explanation:

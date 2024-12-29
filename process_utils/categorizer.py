@@ -1,9 +1,5 @@
-import openai
 from openai import OpenAI
 import os
-import glob
-import pandas as pd
-import glob
 import yaml
 
 
@@ -35,6 +31,8 @@ def categorizer(df, grandparent, parent, fname):
     context = config['accounts'][grandparent][parent]['context']
     fname = "categorized_" + fname
     output_file_name = f"data/CategorizedCsvs/{grandparent}/{parent}/{fname}"
+    if not (os.path.exists(os.path.dirname(output_file_name))):
+        os.makedirs(os.path.dirname(output_file_name))
     if not(os.path.exists(output_file_name)):    
         df['Category'] = df['Description'].apply(categorize_transaction, context=context)
         df.to_csv(output_file_name, index=False)
