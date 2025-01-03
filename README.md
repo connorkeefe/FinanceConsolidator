@@ -3,6 +3,8 @@
 #### Python requirements
 Navigate to the project folder:
 
+Python 3.11.11
+
 ```pip install requirements.txt```
 
 #### Get API key for OpenAI
